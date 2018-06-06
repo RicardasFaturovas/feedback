@@ -1,8 +1,6 @@
-const qaProdEnv = require('./qa-prod');
-const dev = require('./dev');
-
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'qa') {
-  module.exports = qaProdEnv;
+  /* eslint global-require: off */
+  module.exports = require('./qa-prod');
 } else {
-  module.exports = dev;
+  module.exports = require('./dev');
 }
